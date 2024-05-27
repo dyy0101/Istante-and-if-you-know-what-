@@ -1,0 +1,112 @@
+var haChiave = false;
+var isChiaveOnClick = false;
+function aggiornamentoBorsa(argomento) {
+
+    var obj = {};
+
+    switch (argomento) {
+        case CHIAVE:
+
+            obj.nome = "chiave";
+            obj.text = "CHIAVE";
+            obj.val = CHIAVE;
+            obj.numero = numeroChiave;
+
+            //creare lo spazio nella borsa
+            if (!haChiave) {
+                creaCasellaBorsa(obj);
+                haChiave = true;
+            }
+            else {
+                //cancellare dalla borsa
+                if (numeroChiave == 0) {
+                    cancellaOggettoDallaBorsa(obj);
+                    haChiave = false;
+                }
+                //cambia valore dell'oggetto
+                else {
+                    cambiaValoreOggettoBorsa(obj);
+                }
+            }
+            break;
+    }
+}
+
+function creaCasellaBorsa(oggetto) {
+    var c = document.getElementById("borsa");
+
+    //crea l' oggetto nella borsa
+    var div = document.createElement('div');
+    div.id = oggetto.nome+"InBorsa";
+    div.className = "oggettoInBorsa";
+    //div.addEventListener('click', oggettoNellaBorsaCliccata(oggetto));
+
+    c.appendChild(div);
+
+    div = document.getElementById(div.id);
+
+    //aggiunta della div dell' icona
+    var imgDiv = document.createElement('div');
+    imgDiv.id = oggetto.nome+"Img";
+    imgDiv.className = 'imageCol';
+    div.appendChild(imgDiv);
+
+    //aggiunta dell' icona 
+    var image = new Image();
+    image.src = pathImg + oggetto.val + ".png";
+    imgDiv.appendChild(image);
+
+    //aggiunta della div del testo
+    var textDiv = document.createElement('div');
+    textDiv.id = oggetto.nome+"Text";
+    textDiv.className = 'textCol';
+    div.appendChild(textDiv);
+
+    //aggiunta della descrizione
+    var t = document.createTextNode(oggetto.text + " x" + oggetto.numero); 
+    textDiv.appendChild(t);
+
+}
+
+function cambiaValoreOggettoBorsa(oggetto) {
+    document.getElementById(oggetto.textId).innerHTML = oggetto.nome.toUpperCase + " x" + oggetto.numero;
+}
+
+function cancellaOggettoDallaBorsa(oggetto) {
+    const div = document.getElementById(oggetto.id);
+    div.remove();
+}
+
+function oggettoNellaBorsaCliccata(oggetto) {
+    let elemento = document.getElementById(oggetto.nome + "InBorsa");
+    var isChiuso;
+
+    switch (oggetto.val) {
+        case CHIAVE:
+            isChiaveOnClick = !isChiaveOnClick;
+            alert(isChiaveOnClick);
+            if (isChiaveOnClick) {
+                isChiuso = true;
+            }
+            else {
+                isChiuso = false;
+            }
+    }
+
+    if (isChiuso) {
+
+        var textDiv = document.createElement('div');
+        textDiv.id = oggetto.nome+"Descrizione";
+        textDiv.className = 'descrizioneCol';
+        elemento.appendChild(textDiv);
+
+        var t = document.createTextNode("puo' aprire ogni porta"); 
+        textDiv.appendChild(t);
+    }
+    else {
+        document.getElementById(oggetto.nome + "Descrizione").remove();
+    }
+}
+
+function creaDiv(divSuperiore, id, class , contesto) {
+}

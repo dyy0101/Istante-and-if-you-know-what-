@@ -1,0 +1,220 @@
+@font-face {
+    font-family: myFont;
+    src: url(Orbitron-VariableFont_wght.ttf);
+}
+html{
+	background-color:black;
+	font-family:myFont;
+	color:white;
+}
+.main{
+	display:flex;
+	height:400px;
+}
+#piano{
+	margin:auto;
+	width:70%;
+	font-size:0;
+}
+#piano > img{
+	width:25px;
+	height:25px;
+}
+#borsa {
+	border-radius: 3%;
+	border: solid black 10px;
+	width: 30%;
+	margin: 2%;
+	margin-right: 10%;
+	background-color: black;
+	color: white;
+	word-wrap: break-word;
+}
+#borsa > h1 {
+	font-size: 18px;
+}
+.oggettoInBorsa {
+	display: flex;
+	padding: 4%;
+	border: solid black 1px;
+	border-bottom: solid black 1px;
+}
+div#chiaveInBorsa:hover {
+	border: solid white 1px;
+}
+.imgCol {
+	width: 30%;
+	height: 15%;
+	margin: auto;
+}
+.textCol {
+	width: 70%;
+	height: 15%;
+	margin: auto;
+	margin-left: 5%;
+	text-align-last: justify;
+}
+
+.descrizioneOggetto {
+	text-align-last: left;
+	font-size: 15px;
+	color: lightcoral;
+}
+
+.descrizioneCol {
+	font-size: 10px;
+	margin-left: 35%;
+	width: 70%;
+	height: 15%;
+	margin: auto;
+}
+
+.canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	/* background: gray; */
+	/* opacity: 50%;*/
+}
+
+.shadow {
+	width: 100%;
+	height: 100%;
+	background: grey;
+	opacity: 50%;
+}
+.dialogBox {
+	position: absolute;
+	width: 90%;
+	height:400px;
+	margin-left: 5%;
+	bottom: 5%;
+	display: flex;
+	z-index:2;
+}
+.dialogBackGraund {
+	position: absolute;
+	width: 90%;
+	height: 250px;
+	margin-left: 5%;
+	bottom: 5%;
+	border-radius: 10px;
+	background: white;
+	display: flex;
+}
+.textDiv {
+	margin-left: 2%;
+	width: 50%;
+	margin-top: 12%;
+	height: 60%;
+}
+.textDiv > div {
+	width: 95%;
+	margin: 2.5%;
+	color:black;
+}
+.dialogAlVuoto .textDiv {
+	margin-left:5%;
+	letter-spacing:1px;
+}
+.dialogName {
+	height: 10%;
+	font-size: 28px;
+}
+.dialogContent {
+	height: 60%;
+	font-size: 15px;
+}
+.dialogAlVuoto > .dialogContent {
+	font-size: 20px;
+}
+
+.text span {
+	opacity: 0;
+}
+
+.text span.revealed {
+	opacity: 1;
+}
+
+.text span.green {
+	color: #27ae60;
+}
+
+.text span.red {
+	color: #ff0000;
+}
+
+.screenShake {
+	animation: shake 0.2s;
+}
+
+@keyframes shake {
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+
+	20% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+
+	60% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+	80% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+	100% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+	/*
+	0% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+
+	10% {
+		transform: translate(-1px, -2px) rotate(-1deg);
+	}
+
+	20% {
+		transform: translate(-3px, 0px) rotate(1deg);
+	}
+
+	30% {
+		transform: translate(3px, 2px) rotate(0deg);
+	}
+
+	40% {
+		transform: translate(1px, -1px) rotate(1deg);
+	}
+
+	50% {
+		transform: translate(-1px, 2px) rotate(-1deg);
+	}
+
+	60% {
+		transform: translate(-3px, 1px) rotate(0deg);
+	}
+
+	70% {
+		transform: translate(3px, 1px) rotate(-1deg);
+	}
+
+	80% {
+		transform: translate(-1px, -1px) rotate(1deg);
+	}
+
+	90% {
+		transform: translate(1px, 1px) rotate(0deg);
+	}
+
+	100% {
+		transform: translate(1px, -1px) rotate(-1deg);
+	}*/
+}
